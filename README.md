@@ -12,5 +12,5 @@ The files are organized in the following way: `python-version/tf-version/env[cpu
 ### Scripts
 
  * `build.sh py-version tf-version cpu|gpu` : builds all necessary images. 
- e.g. `build.sh 2 121 cpu` will build `docker push polyaxon/base:2`, `docker push polyaxon/base:api-2`, `docker push polyaxon/polyaxon:cpu-2-121`, and `docker push polyaxon/polyaxon:api-cpu-2-121`   
+ e.g. `build.sh 2 121 cpu` will build `polyaxon/base:2`, `polyaxon/base:api-2`, `polyaxon/polyaxon:cpu-2-121`, and `polyaxon/polyaxon:api-cpu-2-121`   
  * `push.sh py-version tf-version cpu|gpu` : pushes all the created images form build.sh step.
