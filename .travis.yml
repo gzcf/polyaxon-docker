@@ -1,0 +1,20 @@
+sudo: required
+
+services:
+  - docker
+
+language:
+  - bash
+
+env:
+  - VERSION="2 121 cpu"
+  - VERSION="3 121 cpu"
+
+script:
+  - ./build.sh $VERSION
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    ./push.sh $VERSION;
+    fi

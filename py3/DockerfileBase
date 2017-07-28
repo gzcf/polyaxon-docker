@@ -18,29 +18,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-setuptools \
         python3-pip \
         libpq-dev \
-        nodejs \
-        npm \
     && apt-get autoremove \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# update npm
-RUN npm install -g npm
-# add symlink to nodejs
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-
 # Install and Upgrade pip to the latest version
 RUN pip3 install --upgrade setuptools pip
 
-RUN pip3 install \
-        jupyter \
-        matplotlib \
-        numpy \
-        scipy
-
 # copy requirements.txt
-COPY requirements.txt /setup/
-RUN pip3 install --no-cache-dir -r /setup/requirements.txt
+COPY base_requirements.txt /setup/
+RUN pip3 install --no-cache-dir -r /setup/base_requirements.txt
 
 # TensorBoard
 EXPOSE 6006
