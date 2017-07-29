@@ -12,6 +12,7 @@ env:
 
 script:
   - ./build.sh $VERSION
+  - ./test.sh $VERSION
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
