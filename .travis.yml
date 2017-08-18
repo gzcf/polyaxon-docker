@@ -9,6 +9,8 @@ language:
 env:
   - VERSION="2 121 cpu"
   - VERSION="3 121 cpu"
+  - VERSION="2 130 cpu"
+  - VERSION="3 130 cpu"
 
 script:
   - ./build.sh $VERSION
