@@ -13,3 +13,4 @@ docker push polyaxon/base:api-$1
 echo "Pushing base tf images:"
 docker push polyaxon/polyaxon:$3-$1-$2
 docker push polyaxon/polyaxon:api-$3-$1-$2
+docker push polyaxon/polyaxon:lib-$3-$1-$2

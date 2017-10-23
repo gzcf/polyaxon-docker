@@ -30,7 +30,7 @@ docker pull polyaxon/polyaxon:api-$3-$1-$2
 
 
 echo "Running images base tests"
-for image in polyaxon/base:$1 polyaxon/base:api-$1 polyaxon/polyaxon:$3-$1-$2 polyaxon/polyaxon:api-$3-$1-$2
+for image in polyaxon/base:$1 polyaxon/base:api-$1 polyaxon/polyaxon:$3-$1-$2 polyaxon/polyaxon:api-$3-$1-$2 polyaxon/polyaxon:lib-$3-$1-$2
 do
     echo "Test for $image"
     echo "jupyter"
@@ -47,7 +47,7 @@ done
 
 
 echo "Running images base api tests"
-for image in polyaxon/base:api-$1 polyaxon/polyaxon:api-$3-$1-$2
+for image in polyaxon/base:api-$1 polyaxon/polyaxon:api-$3-$1-$2 polyaxon/polyaxon:lib-$3-$1-$2
 do
     echo "Test for $image"
     echo "django"
@@ -61,9 +61,20 @@ do
 done
 
 echo "Running polyaxon images tests"
-for image in polyaxon/polyaxon:$3-$1-$2 polyaxon/polyaxon:api-$3-$1-$2
+for image in polyaxon/polyaxon:$3-$1-$2 polyaxon/polyaxon:api-$3-$1-$2 polyaxon/polyaxon:lib-$3-$1-$2
 do
     echo "Test for $image"
     echo "tensorflow"
     docker run $image $PY -c "import tensorflow"
+done
+
+
+echo "Running polyaxon lib images tests"
+for image in polyaxon/polyaxon:lib-$3-$1-$2
+do
+    echo "Test for $image"
+    echo "polyaxon"
+    docker run $image $PY -c "import polyaxon"
+    docker run $image $PY -c "import polyaxon_schemas"
+    docker run $image polyaxon -h
 done

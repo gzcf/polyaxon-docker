@@ -21,4 +21,7 @@ docker build -f $ENV_DIR/Dockerfile -t polyaxon/polyaxon:$3-$1-$2 .
 echo "Build env base api image $ENV_DIR"
 docker build -f $ENV_DIR/DockerfileApi -t polyaxon/polyaxon:api-$3-$1-$2 .
 
+echo "Build env base lib image $ENV_DIR"
+docker build -f $ENV_DIR/DockerfileLib -t polyaxon/polyaxon:lib-$3-$1-$2 .
+
 
