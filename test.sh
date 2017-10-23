@@ -28,6 +28,9 @@ docker pull polyaxon/polyaxon:$3-$1-$2
 echo "Pulling docker image polyaxon:api-$3-$1-$2"
 docker pull polyaxon/polyaxon:api-$3-$1-$2
 
+echo "Pulling docker image polyaxon:lib-$3-$1-$2"
+docker pull polyaxon/polyaxon:lib-$3-$1-$2
+
 
 echo "Running images base tests"
 for image in polyaxon/base:$1 polyaxon/base:api-$1 polyaxon/polyaxon:$3-$1-$2 polyaxon/polyaxon:api-$3-$1-$2 polyaxon/polyaxon:lib-$3-$1-$2
@@ -76,5 +79,5 @@ do
     echo "polyaxon"
     docker run $image $PY -c "import polyaxon"
     docker run $image $PY -c "import polyaxon_schemas"
-    docker run $image polyaxon
+    docker run $image polyaxon --help
 done
