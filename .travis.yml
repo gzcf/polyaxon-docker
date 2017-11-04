@@ -11,6 +11,8 @@ env:
   - VERSION="3 121 cpu"
   - VERSION="2 130 cpu"
   - VERSION="3 130 cpu"
+  - VERSION="2 140 cpu"
+  - VERSION="3 140 cpu"
 
 script:
   - ./build.sh $VERSION

@@ -1,0 +1,6 @@
+FROM polyaxon/polyaxon:api-cpu-2-140
+
+MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
+
+# Install Polyaxon
+RUN pip --no-cache-dir install polyaxon
