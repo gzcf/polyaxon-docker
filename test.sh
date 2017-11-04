@@ -79,5 +79,4 @@ do
     echo "polyaxon"
     docker run $image $PY -c "import polyaxon"
     docker run $image $PY -c "import polyaxon_schemas"
-    docker run $image polyaxon --help
 done
