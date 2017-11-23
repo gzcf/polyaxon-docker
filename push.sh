@@ -8,4 +8,4 @@ fi
 
 echo "Pushing base images:"
 docker push polyaxon/polyaxon-base
-docker push polyaxon/polyaxon-base-npm
+docker push polyaxon/polyaxon-npm-base

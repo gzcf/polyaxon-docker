@@ -11,4 +11,4 @@ echo "Build Base image for $PY_VER_DIR"
 docker build -f $PY_VER_DIR/DockerfileBase -t polyaxon/polyaxon-base .
 
 echo "Build Base npm image py$1"
-docker build -f $PY_VER_DIR/DockerfileBaseApi -t polyaxon/polyaxon-base-npm .
+docker build -f $PY_VER_DIR/DockerfileBaseNpm -t polyaxon/polyaxon-base-npm .
