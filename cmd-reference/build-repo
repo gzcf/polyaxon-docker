@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+if [ $# -lt 3 ]
+  then
+    echo "You should provide at least 3 args: repo name, image name, and image version"
+     exit 1
+fi
+
+if [ ! -z $4 ]
+  then
+    echo "Using minikube registry"
+    eval $(minikube docker-env)
+fi
+
+VAR_REPO="https://github.com/polyaxon/$1"
+
+echo "Clone repo $VAR_REPO"
+mkdir clones
+cd clones/
+git clone $VAR_REPO.git
+cd $1
+
+echo "Build Base image for $2:$3"
+docker build -t polyaxon/$2:$3 .
+
+echo "Clean up"
+cd ../..
+rm -rf clones

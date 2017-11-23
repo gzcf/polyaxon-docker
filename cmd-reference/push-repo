@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [ $# -ne 2 ]
+  then
+    echo "You should provide 2 args: image name, and image version"
+     exit 1
+fi
+
+VAR_REPO="https://github.com/polyaxon/$1"
+VAR_IMAGE_VERSION="$2"
+
+echo "Pushing repo image:"
+docker push polyaxon/$1:$2
