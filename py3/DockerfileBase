@@ -20,6 +20,3 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
 # Install and Upgrade pip to the latest version
 RUN pip3 install --upgrade setuptools pip
 
-# copy requirements.txt
-COPY base_requirements.txt /setup/
-RUN pip3 install --no-cache-dir -r /setup/base_requirements.txt

@@ -7,5 +7,11 @@ if [ $# -ne 1 ]
 fi
 
 echo "Pushing base images:"
-docker push polyaxon/polyaxon-base
-docker push polyaxon/polyaxon-npm-base
+if [ $1 -eq 2 ]
+  then
+    docker push polyaxon/polyaxon-base2
+    docker push polyaxon/polyaxon-npm-base2
+  else
+    docker push polyaxon/polyaxon-base
+    docker push polyaxon/polyaxon-npm-base
+fi
