@@ -27,18 +27,23 @@ if [ $1 -eq 3 ]
 fi
 
 
+if [ $1 -eq 3 ]
+then
+    echo "Running py3 base images tests"
+    for image in polyaxon/polyaxon-base polyaxon/polyaxon-npm-base
+    do
+        echo "Test for python2"
+        docker run $image python3 --version
+    done
+  else
+    echo "Running py2 base images tests"
+    for image in polyaxon/polyaxon-base2 polyaxon/polyaxon-npm-base2
+    do
+        echo "Test for python2"
+        docker run $image python --version
+    done
+fi
 
-echo "Running py2 base images tests"
-for image in polyaxon/polyaxon-base2 polyaxon/polyaxon-npm-base2
-do
-    echo "Test for python2"
-    docker run $image python --version
-done
 
 
-echo "Running py3 base images tests"
-for image in polyaxon/polyaxon-base polyaxon/polyaxon-npm-base
-do
-    echo "Test for python2"
-    docker run $image python3 --version
-done
+
