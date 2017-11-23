@@ -7,16 +7,11 @@ language:
   - bash
 
 env:
-  - VERSION="2 121 cpu"
-  - VERSION="3 121 cpu"
-  - VERSION="2 130 cpu"
-  - VERSION="3 130 cpu"
-  - VERSION="2 140 cpu"
-  - VERSION="3 140 cpu"
+  - VERSION="2"
+  - VERSION="3"
 
 script:
   - ./build.sh $VERSION
-  - ./test.sh $VERSION
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then

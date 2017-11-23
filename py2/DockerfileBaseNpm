@@ -1,4 +1,4 @@
-FROM polyaxon/base:2
+FROM polyaxon/polyaxon-base-2
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
@@ -24,8 +24,3 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 # confirm installation
 RUN node -v
 RUN npm -v
-
-# copy requirements.txt
-COPY base_requirements.txt /setup/
-COPY api_requirements.txt /setup/
-RUN pip install --no-cache-dir -r /setup/api_requirements.txt
