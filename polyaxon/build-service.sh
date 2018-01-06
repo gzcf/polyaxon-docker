@@ -9,9 +9,4 @@ fi
 cd polyaxon/$1
 
 echo "Build Base image for $1:$2"
-if [ "$2" = "master" ]
-    then
-        docker build -t polyaxon/polyaxon-$1 .
-    else
-        docker build -t polyaxon/polyaxon-$1:$2 .
-fi
+docker build -t polyaxon/polyaxon-$1:$2 .
