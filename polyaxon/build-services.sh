@@ -7,13 +7,13 @@ fi
 
 
 ./polyaxon/build-core.sh $1
-./polyaxon/build-service api $1
-./polyaxon/build-service api-events $1
-./polyaxon/build-service beat $1
-./polyaxon/build-service monitor-namespace $1
-./polyaxon/build-service monitor-resources $1
-./polyaxon/build-service monitor-statuses $1
-./polyaxon/build-service sidecar $1
-./polyaxon/build-service workers-events $1
-./polyaxon/build-service workers-scheduler $1
+./polyaxon/build-service.sh api $1
+./polyaxon/build-service.sh api-events $1
+./polyaxon/build-service.sh beat $1
+./polyaxon/build-service.sh monitor-namespace $1
+./polyaxon/build-service.sh monitor-resources $1
+./polyaxon/build-service.sh monitor-statuses $1
+./polyaxon/build-service.sh sidecar $1
+./polyaxon/build-service.sh workers-events $1
+./polyaxon/build-service.sh workers-scheduler $1
 
