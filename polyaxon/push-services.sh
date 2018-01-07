@@ -15,4 +15,4 @@ docker push polyaxon/polyaxon-monitor-statuses:$1
 docker push polyaxon/polyaxon-sidecar:$1
 docker push polyaxon/polyaxon-workers-events:$1
 docker push polyaxon/polyaxon-workers-scheduler:$1
-
+docker push polyaxon/polyaxon-manage:$1

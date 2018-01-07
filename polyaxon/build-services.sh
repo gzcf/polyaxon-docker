@@ -16,4 +16,5 @@ fi
 ./polyaxon/build-service.sh sidecar $1
 ./polyaxon/build-service.sh workers-events $1
 ./polyaxon/build-service.sh workers-scheduler $1
+./polyaxon/build-service.sh manage $1
 
