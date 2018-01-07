@@ -31,6 +31,14 @@ fi
 echo "Build Base image for core:$1"
 docker build -t polyaxon/polyaxon-core .
 
+
+# Api needs to use different .dockerignore process
+echo "Copy Dockerfile and .dockerignore"
+cp ../../polyaxon/api/.dockerignore .
+
+echo "Build Base image for core:$1"
+docker build -t polyaxon/polyaxon-core-api .
+
 echo "Clean up"
 cd ../..
 rm -rf clones
