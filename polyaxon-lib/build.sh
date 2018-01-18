@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-if [ $# -lt 1 ]
+if [ $# -lt 2 ]
   then
-    echo "You should provide at least 1 args: tag"
+    echo "You should provide at least 2 args: branch tag"
      exit 1
 fi
 
@@ -27,13 +27,8 @@ if [ "$1" == "master" ]
         cp ../../polyaxon-lib/Dockerfile .
 fi
 
-echo "Build Base image for lib:$1"
-if [ "$2" = "master" ]
-    then
-        docker build -t polyaxon/polyaxon-lib .
-    else
-        docker build -t polyaxon/polyaxon-lib:$1 .
-fi
+echo "Build Base image for lib:$2"
+docker build -t polyaxon/polyaxon-lib:$2 .
 
 echo "Clean up"
 cd ../..
