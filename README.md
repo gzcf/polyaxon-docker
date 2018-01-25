@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/polyaxon/polyaxon-docker.svg?branch=master)](https://travis-ci.org/polyaxon/polyaxon-docker)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/polyaxon/polyaxon)
 
 # Polyaxon-Docker
