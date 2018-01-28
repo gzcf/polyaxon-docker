@@ -13,8 +13,6 @@ script:
   - ./test.sh 3
   - ./polyaxon-lib/build.sh "$TRAVIS_BRANCH" "$TRAVIS_BRANCH"
   - ./polyaxon/build-services.sh "$TRAVIS_BRANCH" "$TRAVIS_BRANCH"
-  - ./polyaxon-lib/build.sh "$TRAVIS_BRANCH" 0.0.2
-  - ./polyaxon/build-services.sh "$TRAVIS_BRANCH" 0.0.2
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
@@ -24,5 +22,3 @@ after_success:
     fi
   - ./polyaxon-lib/push.sh "$TRAVIS_BRANCH"
   - ./polyaxon/push-services.sh "$TRAVIS_BRANCH"
-  - ./polyaxon-lib/push.sh 0.0.2
-  - ./polyaxon/push-services.sh 0.0.2

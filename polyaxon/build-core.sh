@@ -16,7 +16,7 @@ cd polyaxon
 if [ "$1" != "master" ]
   then
     echo "Using branch"
-    git checkout tags/$1
+    git checkout tags/$1 -b $1
 fi
 
 echo "Copy Dockerfile and .dockerignore"
