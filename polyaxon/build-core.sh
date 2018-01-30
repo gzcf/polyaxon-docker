@@ -33,10 +33,10 @@ docker build -t polyaxon/polyaxon-core .
 
 
 # Api needs to use different .dockerignore process
-echo "Copy Dockerfile and .dockerignore"
+echo "Copy api .dockerignore"
 cp ../../polyaxon/api/.dockerignore .
 
-echo "Build Base image for core:$2"
+echo "Build Base image for core-api:$2"
 docker build -t polyaxon/polyaxon-core-api .
 
 echo "Clean up"
