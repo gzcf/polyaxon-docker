@@ -23,7 +23,6 @@ celerybeat.pid
 polyaxon/polyaxon/env_vars/local.json
 client/
 *.sock
-web/
 tests/
 cmd/
 kubecmd/
