@@ -15,7 +15,8 @@ cd polyaxon
 
 if [ "$1" != "master" ]
   then
-    echo "Using branch"
+    echo "Using tag"
+    git fetch --all --tags --prune
     git checkout tags/$1 -b $1
 fi
 
