@@ -5,5 +5,5 @@ if [ $# -lt 1 ]
      exit 1
 fi
 
-
+echo "Push image polyaxon/polyaxon-lib:$1"
 docker push polyaxon/polyaxon-lib:$1

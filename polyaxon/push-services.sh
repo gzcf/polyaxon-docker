@@ -6,12 +6,21 @@ if [ $# -lt 1 ]
 fi
 
 
+echo "Push image polyaxon/polyaxon-api:$1"
 docker push polyaxon/polyaxon-api:$1
+echo "Push image polyaxon/polyaxon-api-events:$1"
 docker push polyaxon/polyaxon-api-events:$1
+echo "Push image polyaxon/polyaxon-beat:$1"
 docker push polyaxon/polyaxon-beat:$1
+echo "Push image polyaxon/polyaxon-monitor-namespace:$1"
 docker push polyaxon/polyaxon-monitor-namespace:$1
+echo "Push image polyaxon/polyaxon-monitor-resources:$1"
 docker push polyaxon/polyaxon-monitor-resources:$1
+echo "Push image polyaxon/polyaxon-monitor-statuses:$1"
 docker push polyaxon/polyaxon-monitor-statuses:$1
+echo "Push image polyaxon/polyaxon-sidecar:$1"
 docker push polyaxon/polyaxon-sidecar:$1
+echo "Push image polyaxon/polyaxon-workers:$1"
 docker push polyaxon/polyaxon-workers:$1
+echo "Push image polyaxon/polyaxon-manage:$1"
 docker push polyaxon/polyaxon-manage:$1
