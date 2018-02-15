@@ -30,6 +30,10 @@ fi
 
 echo "Build Base image for lib:$2"
 docker build -t polyaxon/polyaxon-lib:$2 .
+if [ "$1" == "master" ]
+    then
+        docker build -t polyaxon/polyaxon-lib:latest
+fi
 
 echo "Clean up"
 cd ../..

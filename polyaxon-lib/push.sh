@@ -7,3 +7,7 @@ fi
 
 echo "Push image polyaxon/polyaxon-lib:$1"
 docker push polyaxon/polyaxon-lib:$1
+if [ "$1" == "master" ]
+    then
+        docker push polyaxon/polyaxon-lib:latest
+fi
