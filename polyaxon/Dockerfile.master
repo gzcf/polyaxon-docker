@@ -6,8 +6,8 @@ RUN apt-get -y update && \
     apt-get -y install git
 
 COPY requirements/requirements-base.txt /requirements/
-COPY requirements/requirements-dev.txt /setup/
-RUN pip3 install --no-cache-dir -r /setup/requirements-dev.txt
+COPY requirements/requirements-dev.txt /requirements/
+RUN pip3 install --no-cache-dir -r /requirements/requirements-dev.txt
 
 VOLUME /polyaxon
 WORKDIR /polyaxon
