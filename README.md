@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/polyaxon/polyaxon-docker.svg?branch=master)](https://travis-ci.org/polyaxon/polyaxon-docker)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/polyaxon/polyaxon)
+[![Build Status](https://travis-ci.org/polyaxon/polyaxon-docker.svg?branch=master)](https://travis-ci.org/polyaxon/polyaxon-docker)
+[![Slack](https://img.shields.io/badge/chat-on%20slack-aadada.svg?logo=slack&longCache=true)](https://join.slack.com/t/polyaxon/shared_invite/enQtMzQ0ODc2MDg1ODc0LWY2ZTdkMTNmZjBlZmRmNjQxYmYwMTBiMDZiMWJhODI2ZTk0MDU4Mjg5YzA5M2NhYzc5ZjhiMjczMDllYmQ2MDg)
 
 # Polyaxon-Docker
 
