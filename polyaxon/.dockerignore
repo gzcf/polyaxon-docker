@@ -21,6 +21,7 @@ dist/
 *.egg-info/
 celerybeat.pid
 polyaxon/polyaxon/env_vars/local.json
+docs/
 client/
 static/
 *.sock
