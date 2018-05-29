@@ -2,6 +2,6 @@ FROM polyaxon/polyaxon-base
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
-RUN pip3 install --no-cache-dir -r /requirements/monitor_namespace/requirements.txt
+RUN pip3 install --no-cache-dir -r /requirements/monitor_namespace/requirements-dev.txt
 WORKDIR /polyaxon
 ENTRYPOINT ["python3", "polyaxon/manage.py",  "monitor_namespace"]
