@@ -13,7 +13,7 @@ VOLUME /polyaxon
 WORKDIR /polyaxon
 copy . /polyaxon
 
-RUN pip3 install --no-cache-dir -r /requirements/api/requirements.txt
+RUN pip3 install --no-cache-dir -r /requirements/api/requirements-dev.txt
 
 RUN rm -f /etc/nginx/sites-enabled/default
 RUN rm -f /etc/nginx/sites-available/default
