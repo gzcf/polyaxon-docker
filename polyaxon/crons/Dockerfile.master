@@ -2,12 +2,15 @@ FROM polyaxon/polyaxon-base
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
-COPY requirements /requirements
+RUN apt-get -y update && \
+    apt-get -y install git
 
-VOLUME /polyaxon
+COPY requirements /requirements
 WORKDIR /polyaxon
-copy . /polyaxon
+COPY . /polyaxon
 
 RUN pip3 install --no-cache-dir -r /requirements/crons/requirements-dev.txt
+
 WORKDIR /polyaxon/polyaxon
+
 ENTRYPOINT ["celery", "-A", "polyaxon", "worker" , "--loglevel=INFO", "--without-mingle", "--without-gossip", "-n default@%h", "-Q"]

@@ -12,6 +12,7 @@ fi
 ./polyaxon/build-service.sh commands $2
 ./polyaxon/build-service.sh crons $2
 ./polyaxon/build-service.sh dockerizer $2
+./polyaxon/build-service.sh hpsearch $2
 ./polyaxon/build-service.sh manage $2
 ./polyaxon/build-service.sh monitor-namespace $2
 ./polyaxon/build-service.sh monitor-resources $2

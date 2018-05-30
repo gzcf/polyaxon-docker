@@ -8,4 +8,4 @@ RUN pip3 install --no-cache-dir -r /requirements/requirements.txt
 
 VOLUME /polyaxon
 WORKDIR /polyaxon
-copy . /polyaxon
+COPY . /polyaxon

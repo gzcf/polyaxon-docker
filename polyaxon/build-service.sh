@@ -17,11 +17,20 @@ fi
 
 echo "Copy Dockerfile and .dockerignore"
 cp ../../polyaxon/$1/.dockerignore .
+
 if [ "$2" == "master" ]
     then
         cp ../../polyaxon/$1/Dockerfile.master Dockerfile
     else
-        cp ../../polyaxon/$1/Dockerfile .
+        if
+            git rev-parse $1 >/dev/null 2>&1
+        then
+            # Tag
+            cp ../../polyaxon/$1/Dockerfile .
+        else
+            # Branch
+            cp ../../polyaxon/$1/Dockerfile.master Dockerfile
+        fi
 fi
 
 echo "Build Base image for $1:$2"
