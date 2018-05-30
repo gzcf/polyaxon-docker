@@ -1,0 +1,23 @@
+FROM polyaxon/polyaxon-base
+
+MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
+
+RUN apt-get -y update && \
+    apt-get -y install git && \
+    apt-get -y install nginx && \
+    apt-get -y install libldap2-dev libsasl2-dev
+
+COPY requirements /requirements
+
+VOLUME /polyaxon
+WORKDIR /polyaxon
+copy . /polyaxon
+
+RUN pip3 install --no-cache-dir -r /requirements/monolith/requirements.txt
+
+RUN rm -f /etc/nginx/sites-enabled/default
+RUN rm -f /etc/nginx/sites-available/default
+# We need to copy from within docker
+RUN cp /polyaxon/web/nginx.conf /etc/nginx/sites-available/polyaxon.config
+RUN ln -s /etc/nginx/sites-available/polyaxon.config /etc/nginx/sites-enabled/polyaxon.conf
+RUN cp /polyaxon/web/uwsgi_params /etc/nginx/uwsgi_params
