@@ -3,10 +3,12 @@
 .idea/*
 *.pyc
 tmp/*
+*.dump
 dump.rdb
 staticfiles
-*.dump
 staticfiles/
+static
+static/
 .coverage
 coverage.xml
 celerybeat-schedule*
@@ -27,3 +29,4 @@ client/
 tests/
 cmd/
 kubecmd/
+web/
