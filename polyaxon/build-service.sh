@@ -5,6 +5,8 @@ if [ $# -lt 2 ]
      exit 1
 fi
 
+cd clones/polyaxon
+
 if [ -f .dockerignore ]; then
     rm .dockerignore
 fi
@@ -12,7 +14,6 @@ fi
 if [ -f Dockerfile ]; then
     rm Dockerfile
 fi
-
 
 echo "Copy Dockerfile and .dockerignore"
 cp ../../polyaxon/$1/.dockerignore .
