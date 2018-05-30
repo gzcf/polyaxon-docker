@@ -6,6 +6,6 @@ COPY requirements /requirements
 WORKDIR /polyaxon
 COPY . /polyaxon
 
-RUN pip3 install --no-cache-dir -r /requirements/side/requirements.txt
+RUN pip3 install --no-cache-dir -r /requirements/sidecar/requirements.txt
 
 ENTRYPOINT ["python3", "polyaxon/manage.py", "start_sidecar"]
