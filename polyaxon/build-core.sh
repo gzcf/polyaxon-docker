@@ -1,24 +1,20 @@
 #!/usr/bin/env bash
+
 if [ $# -lt 2 ]
   then
     echo "You should provide at least 2 args: branch tag"
      exit 1
 fi
 
-VAR_REPO=https://github.com/polyaxon/polyaxon.git
+VAR_REPO=ssh://git@cooder.linkdoc.com:2112/polyaxon/polyaxon.git
 
 echo "Clone repo $VAR_REPO"
 mkdir clones
 cd clones/
 git clone $VAR_REPO
 cd polyaxon
-
-if [ "$1" != "master" ]
-  then
-    echo "Using tag"
-    git fetch --all --tags --prune
-    git checkout tags/$1 -b $1
-fi
+git fetch --all --tags --prune
+git checkout $1
 
 echo "Copy Dockerfile and .dockerignore"
 cp ../../polyaxon/.dockerignore .
