@@ -2,6 +2,8 @@ FROM polyaxon/polyaxon-base
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
+ENV POLYAXON_SERVICE=api
+
 RUN apt-get -y update && \
     apt-get -y install git && \
     apt-get -y install nginx && \

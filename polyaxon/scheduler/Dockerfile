@@ -2,6 +2,8 @@ FROM polyaxon/polyaxon-base
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
+ENV POLYAXON_SERVICE=scheduler
+
 COPY requirements /requirements
 WORKDIR /polyaxon
 COPY . /polyaxon

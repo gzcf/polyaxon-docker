@@ -2,13 +2,13 @@ FROM polyaxon/polyaxon-base
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
-ENV POLYAXON_SERVICE=hpsearch
+ENV POLYAXON_SERVICE=events_handlers
 
 COPY requirements /requirements
 WORKDIR /polyaxon
 COPY . /polyaxon
 
-RUN pip3 install --no-cache-dir -r /requirements/hpsearch/requirements.txt
+RUN pip3 install --no-cache-dir -r /requirements/scheduler/requirements.txt
 
 WORKDIR /polyaxon/polyaxon
 
