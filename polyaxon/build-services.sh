@@ -9,7 +9,6 @@ fi
 
 ./polyaxon/build-service.sh api $2
 ./polyaxon/build-service.sh beat $2
-./polyaxon/build-service.sh commands $2
 ./polyaxon/build-service.sh crons $2
 ./polyaxon/build-service.sh dockerizer $2
 ./polyaxon/build-service.sh hpsearch $2

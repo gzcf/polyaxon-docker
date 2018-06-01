@@ -18,12 +18,6 @@ if [ "$1" == "master" ]
     then
         docker push polyaxon/polyaxon-beat:latest
 fi
-echo "Push image polyaxon/polyaxon-commands:$1"
-docker push polyaxon/polyaxon-commands:$1
-if [ "$1" == "master" ]
-    then
-        docker push polyaxon/polyaxon-commands:latest
-fi
 echo "Push image polyaxon/polyaxon-crons:$1"
 docker push polyaxon/polyaxon-crons:$1
 if [ "$1" == "master" ]
