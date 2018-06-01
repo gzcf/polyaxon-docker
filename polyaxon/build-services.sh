@@ -7,6 +7,8 @@ fi
 
 ./polyaxon/prepare.sh $1
 
+./polyaxon/build-service.sh core $2
+
 ./polyaxon/build-service.sh api $2
 ./polyaxon/build-service.sh beat $2
 ./polyaxon/build-service.sh crons $2

@@ -1,12 +1,9 @@
-FROM polyaxon/polyaxon-base
+FROM polyaxon/polyaxon-core
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
 ENV POLYAXON_SERVICE=crons
 
-COPY requirements /requirements
-
-VOLUME /polyaxon
 WORKDIR /polyaxon
 COPY . /polyaxon
 

@@ -1,13 +1,9 @@
-FROM polyaxon/polyaxon-base
+FROM polyaxon/polyaxon-core
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
 ENV POLYAXON_SERVICE=scheduler
 
-RUN apt-get -y update && \
-    apt-get -y install git
-
-COPY requirements /requirements
 WORKDIR /polyaxon
 COPY . /polyaxon
 

@@ -1,10 +1,9 @@
-FROM polyaxon/polyaxon-base
+FROM polyaxon/polyaxon-core
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
 ENV POLYAXON_SERVICE=streams
 
-COPY requirements /requirements
 WORKDIR /polyaxon
 COPY . /polyaxon
 
