@@ -33,10 +33,15 @@ if [ "$2" == "master" ]
         fi
 fi
 
-echo "Build Base image for $1:$2"
-
-docker build -t polyaxon/polyaxon-$1:$2 .
-if [ "$2" == "master" ]
+if [ "$1" == "core" ]
     then
-        docker build -t polyaxon/polyaxon-$1:latest .
+       echo "Build Base image for $1"
+       docker build -t polyaxon/polyaxon-$1 .
+    else
+       echo "Build Base image for $1:$2"
+       docker build -t polyaxon/polyaxon-$1:$2 .
+       if [ "$2" == "master" ]
+           then
+               docker build -t polyaxon/polyaxon-$1:latest .
+       fi
 fi
