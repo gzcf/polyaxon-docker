@@ -22,6 +22,8 @@ if [ "$1" != "master" ]
     then
         git checkout tags/$1 -b $1
         echo "Using tag"
+        cd ../
+        touch is_tag
     else
         git checkout $1
         echo "Using branch"

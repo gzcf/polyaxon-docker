@@ -22,14 +22,16 @@ if [ "$2" == "master" ]
     then
         cp ../../polyaxon/$1/Dockerfile.master Dockerfile
     else
-        if
-            git rev-parse $1 >/dev/null 2>&1
-        then
-            # Tag
-            cp ../../polyaxon/$1/Dockerfile .
-        else
-            # Branch
-            cp ../../polyaxon/$1/Dockerfile.master Dockerfile
+        cd ../
+        if [ -f is_tag ]
+            then
+                echo "Build for Tag with Dockerfile"
+                cd polyaxon
+                cp ../../polyaxon/$1/Dockerfile .
+            else
+                echo "Build for Branch with Dockerfile.master"
+                cd polyaxon
+                cp ../../polyaxon/$1/Dockerfile.master Dockerfile
         fi
 fi
 
