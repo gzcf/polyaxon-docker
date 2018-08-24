@@ -2,7 +2,7 @@ FROM polyaxon/polyaxon-base
 
 MAINTAINER mourad mourafiq <mouradmourafiq@gmail.com>
 
-RUN sed -i -e 's/archive.ubuntu.com/mirrors.aliyun.com/g;' /etc/apt/sources.list
+RUN sed -i -e 's/archive.ubuntu.com/mirrors.aliyun.com/g; s/security.ubuntu.com/mirrors.aliyun.com/g;' /etc/apt/sources.list
 
 RUN apt-get -y update && \
     apt-get -y install git && \
